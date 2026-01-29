@@ -28,7 +28,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'mod_challenge';
-$plugin->requires = 2022041900; //requires at least Moodle 4.0!
+$plugin->requires = 2025100600; //requires at least Moodle 5.1!
 $plugin->maturity = MATURITY_BETA;
-$plugin->version = 2022011200;
-$plugin->release = '0.9.1';
+$plugin->version = 2026012900;
+$plugin->release = '1.0.0';
