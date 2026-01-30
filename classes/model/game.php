@@ -16,9 +16,6 @@
 
 namespace mod_challenge\model;
 
-global $CFG;
-require_once($CFG->libdir . '/outputcomponents.php');
-
 use coding_exception;
 use dml_exception;
 use mod_challenge\util;
