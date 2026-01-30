@@ -20,7 +20,6 @@ use context;
 use core\external\exporter;
 use mod_challenge\model\attempt;
 use mod_challenge\model\game;
-use mod_challenge\model\match;
 use renderer_base;
 
 defined('MOODLE_INTERNAL') || die();

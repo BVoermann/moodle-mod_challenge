@@ -21,13 +21,13 @@ use mod_challenge\util;
 defined('MOODLE_INTERNAL') || die();
 
 /**
- * Class match
+ * Class game_match
  *
  * @package    mod_challenge\model
  * @copyright  2020 Benedikt Kulmann <b@kulmann.biz>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class match extends abstract_model {
+class game_match extends abstract_model {
 
     /**
      * @var int The timestamp of the creation of this match.

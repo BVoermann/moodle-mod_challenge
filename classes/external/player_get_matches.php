@@ -24,7 +24,7 @@ use external_multiple_structure;
 use external_value;
 use invalid_parameter_exception;
 use mod_challenge\external\exporter\match_dto;
-use mod_challenge\model\match;
+use mod_challenge\model\game_match;
 use mod_challenge\util;
 use moodle_exception;
 use restricted_context_exception;
@@ -83,7 +83,7 @@ class player_get_matches extends external_api {
         // collect export data
         $result = [];
         foreach ($matches as $match) {
-            \assert($match instanceof match);
+            \assert($match instanceof game_match);
             $exporter = new match_dto($match, $game, $ctx);
             $result[] = $exporter->export($renderer);
         }

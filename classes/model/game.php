@@ -367,7 +367,7 @@ class game extends abstract_model {
         if (count($participants) % 2 !== 0) {
             $mdl_user_1 = array_shift($participants);
             $mdl_user_2 = $mdl_user_1;
-            $match = new match();
+            $match = new game_match();
             $match->set_mdl_user_1($mdl_user_1->get_mdl_user());
             $match->set_mdl_user_2($mdl_user_2->get_mdl_user());
             $match->set_round($round->get_id());
@@ -378,7 +378,7 @@ class game extends abstract_model {
         while (count($participants) > 1) {
             $mdl_user_1 = array_shift($participants);
             $mdl_user_2 = array_shift($participants);
-            $match = new match();
+            $match = new game_match();
             $match->set_mdl_user_1($mdl_user_1->get_mdl_user());
             $match->set_mdl_user_2($mdl_user_2->get_mdl_user());
             $match->set_round($round->get_id());
@@ -556,7 +556,7 @@ class game extends abstract_model {
      *
      * @param int $mdl_user_id
      *
-     * @return match[]
+     * @return game_match[]
      * @throws dml_exception
      */
     public function get_user_matches($mdl_user_id) {
@@ -576,7 +576,7 @@ class game extends abstract_model {
                     ORDER BY m.timecreated ASC", $sql_params);
         $result = [];
         foreach ($records as $match_data) {
-            $match = new match();
+            $match = new game_match();
             $match->apply($match_data);
             $result[] = $match;
         }

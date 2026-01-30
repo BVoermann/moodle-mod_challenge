@@ -24,7 +24,7 @@ use invalid_parameter_exception;
 use mod_challenge\model\attempt;
 use mod_challenge\model\category;
 use mod_challenge\model\game;
-use mod_challenge\model\match;
+use mod_challenge\model\game_match;
 use mod_challenge\model\participant;
 use mod_challenge\model\question;
 use mod_challenge\model\round;
@@ -107,11 +107,11 @@ class util {
      * Checks that the match belongs to the given $round.
      *
      * @param game $game
-     * @param match $match
+     * @param game_match $match
      *
      * @throws invalid_parameter_exception
      */
-    public static function validate_match(game $game, match $match) {
+    public static function validate_match(game $game, game_match $match) {
         try {
             $round = self::get_round($match->get_round());
         } catch (dml_exception $e) {
@@ -207,11 +207,11 @@ class util {
      *
      * @param int $matchid
      *
-     * @return match
+     * @return game_match
      * @throws dml_exception
      */
-    public static function get_match($matchid): match {
-        $match = new match();
+    public static function get_match($matchid): game_match {
+        $match = new game_match();
         $match->load_data_by_id($matchid);
         return $match;
     }

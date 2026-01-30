@@ -244,14 +244,14 @@ class round extends abstract_model {
     /**
      * Loads all matches of this round.
      *
-     * @return match[]
+     * @return game_match[]
      * @throws \dml_exception
      */
     public function get_match_entities(): array {
         global $DB;
         $records = $DB->get_records('challenge_matches', ['round' => $this->get_id()]);
         return \array_map(function ($record) {
-            $match = new match();
+            $match = new game_match();
             $match->apply($record);
             return $match;
         }, $records);

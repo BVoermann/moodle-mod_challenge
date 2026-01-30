@@ -19,7 +19,7 @@ namespace mod_challenge\external\exporter;
 use context;
 use core\external\exporter;
 use mod_challenge\model\game;
-use mod_challenge\model\match;
+use mod_challenge\model\game_match;
 use renderer_base;
 
 defined('MOODLE_INTERNAL') || die();
@@ -34,7 +34,7 @@ defined('MOODLE_INTERNAL') || die();
 class match_dto extends exporter {
 
     /**
-     * @var match
+     * @var game_match
      */
     protected $match;
     /**
@@ -45,13 +45,13 @@ class match_dto extends exporter {
     /**
      * tournament_match_dto constructor.
      *
-     * @param match $match
+     * @param game_match $match
      * @param game $game
      * @param context $context
      *
      * @throws \coding_exception
      */
-    public function __construct(match $match, game $game, context $context) {
+    public function __construct(game_match $match, game $game, context $context) {
         $this->match = $match;
         $this->game = $game;
         parent::__construct([], ['context' => $context]);

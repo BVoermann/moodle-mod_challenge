@@ -22,7 +22,7 @@ use core\task\scheduled_task;
 use core_user;
 use dml_exception;
 use mod_challenge\model\game;
-use mod_challenge\model\match;
+use mod_challenge\model\game_match;
 use mod_challenge\model\round;
 use mod_challenge\util;
 use moodle_exception;
@@ -63,7 +63,7 @@ class send_match_invitations extends scheduled_task {
         $rounds_by_id = [];
         foreach ($records as $record) {
             // load match
-            $match = new match();
+            $match = new game_match();
             $match->apply($record);
 
             // load game
@@ -106,11 +106,11 @@ class send_match_invitations extends scheduled_task {
      * @param int $mdl_user_to
      * @param game $game
      * @param round $round
-     * @param match $match
+     * @param game_match $match
      *
      * @throws coding_exception|moodle_exception
      */
-    private function send_invitation(int $mdl_user_to, game $game, round $round, match $match) {
+    private function send_invitation(int $mdl_user_to, game $game, round $round, game_match $match) {
         // set up context
         global $DB;
         $user_to = $DB->get_record('user', array('id' => $mdl_user_to));
