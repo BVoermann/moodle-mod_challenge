@@ -20,15 +20,15 @@ global $CFG;
 require_once($CFG->libdir . '/questionlib.php');
 
 use coding_exception;
-use external_api;
-use external_function_parameters;
-use external_multiple_structure;
-use external_value;
+use core_external\external_api;
+use core_external\external_function_parameters;
+use core_external\external_multiple_structure;
+use core_external\external_value;
 use invalid_parameter_exception;
 use mod_challenge\external\exporter\mdl_category_dto;
 use moodle_exception;
 use question_edit_contexts;
-use restricted_context_exception;
+use core_external\restricted_context_exception;
 use function question_category_options;
 
 defined('MOODLE_INTERNAL') || die();

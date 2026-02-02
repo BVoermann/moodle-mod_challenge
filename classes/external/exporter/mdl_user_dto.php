@@ -16,9 +16,6 @@
 
 namespace mod_challenge\external\exporter;
 
-global $CFG;
-require_once($CFG->libdir . '/outputcomponents.php');
-
 use context;
 use core\external\exporter;
 use mod_challenge\model\participant;
