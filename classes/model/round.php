@@ -236,6 +236,9 @@ class round extends abstract_model {
      */
     public function get_next_match_number() {
         $round_duration = $this->timeend - $this->timestart;
+        if ($round_duration <= 0 || $this->get_matches() <= 0) {
+            return 0;
+        }
         $match_duration = $round_duration / $this->get_matches();
         $time_passed = min(\time(), $this->timeend) - $this->timestart;
         return \intval(\ceil($time_passed / $match_duration));
