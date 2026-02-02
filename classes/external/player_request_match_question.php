@@ -33,10 +33,6 @@ use stdClass;
 
 defined('MOODLE_INTERNAL') || die();
 
-global $CFG;
-require_once($CFG->dirroot . '/lib/questionlib.php');
-require_once($CFG->dirroot . '/question/engine/bank.php');
-
 class player_request_match_question extends external_api {
 
     /**

@@ -16,9 +16,6 @@
 
 namespace mod_challenge\external;
 
-global $CFG;
-require_once($CFG->libdir . '/questionlib.php');
-
 use coding_exception;
 use core_external\external_api;
 use core_external\external_function_parameters;
@@ -27,14 +24,9 @@ use core_external\external_single_structure;
 use core_external\external_value;
 use invalid_parameter_exception;
 use mod_challenge\external\exporter\mdl_answer_dto;
-use mod_challenge\external\exporter\mdl_category_dto;
-use mod_challenge\external\exporter\mdl_question_dto;
 use mod_challenge\util;
 use moodle_exception;
-use question_edit_contexts;
 use core_external\restricted_context_exception;
-use stdClass;
-use function question_category_options;
 
 defined('MOODLE_INTERNAL') || die();
 

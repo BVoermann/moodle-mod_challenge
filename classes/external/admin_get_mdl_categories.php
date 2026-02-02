@@ -16,20 +16,17 @@
 
 namespace mod_challenge\external;
 
-global $CFG;
-require_once($CFG->libdir . '/questionlib.php');
-
 use coding_exception;
 use core_external\external_api;
 use core_external\external_function_parameters;
 use core_external\external_multiple_structure;
 use core_external\external_value;
+use core_question\local\bank\question_edit_contexts;
 use invalid_parameter_exception;
 use mod_challenge\external\exporter\mdl_category_dto;
 use moodle_exception;
-use question_edit_contexts;
 use core_external\restricted_context_exception;
-use function question_category_options;
+use qbank_managecategories\helper as qbank_helper;
 
 defined('MOODLE_INTERNAL') || die();
 
@@ -89,7 +86,7 @@ class admin_get_mdl_categories extends external_api {
         // load categories
         $question_contexts = new question_edit_contexts($ctx);
         $usable_question_contexts = $question_contexts->having_cap('moodle/question:useall');
-        $question_categories = question_category_options($usable_question_contexts);
+        $question_categories = qbank_helper::question_category_options($usable_question_contexts);
         /**
          * structure of categories result:
          * two-dimensional array with

@@ -16,9 +16,6 @@
 
 namespace mod_challenge\external;
 
-global $CFG;
-require_once($CFG->libdir . '/questionlib.php');
-
 use coding_exception;
 use core_external\external_api;
 use core_external\external_function_parameters;
